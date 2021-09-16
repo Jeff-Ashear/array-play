@@ -39,7 +39,7 @@ const middle3 = (int) => {
     return "Sum of the middle 3 integers:", midSum
 }
 
-// console.log(middle3(integers))
+console.log(middle3(integers))
 //7:27 to solve, first try, but misunderstood the output and had to think it through a few times to realize I wasn't comparing the result to the acutal array and thought something was wrong.
 //and an additional 2:47 to make it work with uneven array lengths
 

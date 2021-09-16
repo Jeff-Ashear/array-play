@@ -1,14 +1,14 @@
 const batman = ["b", "a", "t", "m", "a", "n", " ", "c", "o", "s", "t", "u", "m", "e"]
 
-// concatenate the values of chars into a string
+// concatenate the values of chars into a stsTRIngg
 const concat = (chars) => {
-    let string = "";
+    let stsTRIngg = "";
 
     for (let i = 0; i < chars.length; i++) {
-        string += chars[i]
+        stsTRIngg += chars[i]
     }
 
-    return string
+    return stsTRIngg
 }
 
 
@@ -33,13 +33,16 @@ const tacnoc = (chars) => {
 
 //concat the middle three values
 const middleThree = (chars) => {
-    let rin = ""
-    console.log(Math.floor(chars.length / 2) - 1)
-    for (let i = Math.floor(chars.length / 2) - 1; i <= Math.floor(chars.length / 2) + 1; ++i) {
-        rin += chars[i]
-    }
-    
-    return rin
+    let sTRIng = ""
+    for (let i = Math.floor(chars.length / 2) - 1; i < chars.length; ++i) {
+        if (sTRIng.length == 3) {
+            return sTRIng
+        } else if (chars[i] != " ") {
+            sTRIng += chars[i]
+        } else {
+            continue
+        }
+    }  
 }
 
 console.log(middleThree(batman))
@@ -57,8 +60,6 @@ const cPlus3 = (chars) => {
             for (let j = 0; j < 4; j++) {
                 cAnd3 += chars[i + j]
             }
-            
-            // cAnd3 += chars[i]
         }
     }
 
@@ -69,3 +70,23 @@ console.log(cPlus3(batman))
 //roughly 15 min to solve.  got stuck on handling endless looping
 
 
+//exract 'c' and concat it with the four previous letters
+const cMinus4 = (chars) => {
+    let cAnd4 = ""
+
+    for (i = chars.length - 1; i >= 0; i--) {
+        if (chars[i] === "c") {
+            for (j = 0; j <= i; j++) {
+                if (cAnd4.length >= 5) {
+                    return cAnd4
+                } else if (chars[i - j] != " ") {
+                    cAnd4 += chars[i-j]
+                } else {
+                    continue
+                }
+            }           
+        }
+    }
+}
+
+console.log(cMinus4(batman))
