@@ -28,9 +28,9 @@ console.log("Backwards sum:", backwardsSum(integers))
 // sum up its middle 3 values
 const middle3 = (int) => {
     let mid3 = 0
-    for (let i = Math.floor(int.length / 2); i = Math.floor(int.length / 2) + 3; i++) {
+    for (let i = Math.floor(int.length / 2) - 1; i <= Math.floor(int.length / 2) + 1; i++) {
         mid3 += int[i]
-        console.log(i)
+        console.log(int[i])
     }
     return mid3
 }
